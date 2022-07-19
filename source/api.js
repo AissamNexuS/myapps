@@ -1,6 +1,6 @@
 "use strict";
-import CookieManager from "react-native-cookies";
-import { displayToast } from "./component/Toast";
+import CookieManager from "@react-native-cookies/cookies";
+import { displayToast } from "./../lib/interactions";
 import storage from "./storage";
 
 
@@ -21,7 +21,7 @@ const publicUrls = [
 
 
 const Api = () => {
-  
+
   const core = (url, method, data, isForm) => {
     const promise = new Promise((resolve, reject) => {
       return storage.getSession().then((cookie) => {
@@ -36,10 +36,10 @@ const Api = () => {
         const headers = isForm
           ? formHeaders
           : {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              cookie: cookie,
-            };
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            cookie: cookie,
+          };
 
         /**
          * Send undefined cookie
@@ -64,7 +64,6 @@ const Api = () => {
         };
 
         // Clearing all cookies stored by native cookie managers.
-        console.log(CookieManager);
         return CookieManager.clearAll().then(() => {
           return fetch(url, fetchParams)
             .then((response) => {
@@ -79,16 +78,16 @@ const Api = () => {
                * Erease existing cookie
                */
               if (response.status === 401) {
-                
+
                 displayToast("Nom d'utilisateur ou mot de passe erroné")
-                
-                
+
+
               }
-              
+
               if (response.status >= 200 && response.status < 300) {
                 if (ckie && url === publicUrls[0]) {
                   storage.setSession(ckie);
-                  
+
                 }
                 resolve(response);
               } else {

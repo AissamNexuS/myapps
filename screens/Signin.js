@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import Api from './../source/api'
 
 
 
@@ -8,7 +9,26 @@ const Signin = ({ navigation }) => {
     const [Email, setEmail] = useState("");
     const [PassWord, setPassWord] = useState("");
 
+    const Signin1 = (cb) => {
+        Api().post("/api/v1/auth/signin", {
+            username: "Alami1@test.com",
+            password: "Ab@123456",
+            oneSignalPlayerId: "",
+        })
+            .then((res) => {
+                // storeData();
+                // setIsLoading(false);
+                console.log('res', res);
+                // cb && cb();
+                navigation.replace('Home');
 
+            })
+            .catch((e) => {
+                console.log("errrrrror   ", e.message);
+                // displayToast(e.message)
+                // setIsLoading(false);
+            });
+    }
 
     return (
 
@@ -53,13 +73,15 @@ const Signin = ({ navigation }) => {
                 </Text>
 
                 <><TouchableOpacity
-                //onPress={() => { Signin1() }}
+                    onPress={() => { Signin1(() => navigation.replace("Home")) }}
                 >
                     <Text style={styles.Btn}>
                         Entrer
                     </Text>
                 </TouchableOpacity>
-                    <TouchableOpacity onPress={() => { navigation.navigate("Signup") }}>
+                    <TouchableOpacity onPress={() => Signin1(
+                        /*() => { navigation.navigate("Signup") }*/
+                    )}>
                         <Text
                             style={styleES.texte3}>
                             Je n’ai pas de compte

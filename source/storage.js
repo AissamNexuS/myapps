@@ -4,7 +4,7 @@
  * Functions to save and retrieve datas from AsyncStorage
  */
 
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 //import reportError from "lib/errorHandler";
 
 const appName = require("../package.json").name;
