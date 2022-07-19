@@ -79,9 +79,7 @@ const Signin = ({ navigation }) => {
                         Entrer
                     </Text>
                 </TouchableOpacity>
-                    <TouchableOpacity onPress={() => Signin1(
-                        /*() => { navigation.navigate("Signup") }*/
-                    )}>
+                    <TouchableOpacity onPress={() => { navigation.navigate("Signup") }}>
                         <Text
                             style={styleES.texte3}>
                             Je n’ai pas de compte
