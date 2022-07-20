@@ -1,30 +1,33 @@
-import { Text, View, StyleSheet, SafeAreaView, FlatList, ScrollView, Image, TouchableOpacity, StatusBar } from 'react-native'
+import { Text, View, StyleSheet, SafeAreaView, FlatList, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import items from '../img/pngs/postes'
 
 
-const Item = () => (
-    <View>
-        <Text style={contaire0.Tel}> Coca-Cola
-            <View >
-                <Image source={require("../img/pngs/3.png")} style={contaire0.logop3} />
-            </View><View >
-                <Image source={require("../img/pngs/coeur.png")} style={contaire0.logop4} />
-            </View>
-        </Text>
-        <View>
-            <Image source={require("../img/pngs/4.png")} style={{ width: 427.5, height: 285 }} />
-        </View>
-        <View>
-            <Text style={contaire0.Tel2}>Nouvelle proposition graphique</Text>
-            <Text style={contaire0.Tel3}>2021-08-31 — 09:39</Text>
-            <Text style={contaire0.Tel4}>Rabat, Agdal, Av Oqba ...</Text>
-        </View>
-    </View>
-);
+
 
 const Home = ({ navigation }) => {
-
+    const Item = () => (
+        <View>
+            <Text style={contaire0.Tel}> Coca-Cola
+                <View >
+                    <Image source={require("../img/pngs/3.png")} style={contaire0.logop3} />
+                </View><View ><TouchableOpacity >
+                    <Image source={require("../img/pngs/coeur.png")} style={contaire0.logop4} />
+                </TouchableOpacity >
+                </View>
+            </Text>
+            <View>
+                <TouchableOpacity onPress={() => { navigation.navigate("Détails") }}>
+                    <Image source={require("../img/pngs/4.png")} style={{ width: 427.5, height: 285 }} />
+                </TouchableOpacity>
+            </View>
+            <View>
+                <Text style={contaire0.Tel2}>Nouvelle proposition graphique</Text>
+                <Text style={contaire0.Tel3}>2021-08-31 — 09:39</Text>
+                <Text style={contaire0.Tel4}>Rabat, Agdal, Av Oqba ...</Text>
+            </View>
+        </View>
+    );
 
     const renderItem = ({ item }) => (
         <Item
@@ -57,7 +60,9 @@ const Home = ({ navigation }) => {
                     keyExtractor={item => item.id}
                 />
                 <View style={contaire0.logop5}>
-                    <Image source={require("../img/pngs/5.png")} />
+                    <TouchableOpacity >
+                        <Image source={require("../img/pngs/coeur2.png")} />
+                    </TouchableOpacity >
                 </View>
             </SafeAreaView>
         </View>
@@ -123,7 +128,10 @@ const contaire0 = StyleSheet.create({
         left: 10
     },
     logop5: {
-        flexDirection: 'row-reverse',
+        // alignItems: 'flex-end',
+        alignSelf: 'flex-end',
+        // backgroundColor: 'red',
+        width: 100,
     },
 });
 const styles = StyleSheet.create({
