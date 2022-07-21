@@ -10,9 +10,6 @@ const Signup = ({ navigation }) => {
     const [Email, setEmail] = useState("");
     const [TelePhone, setTelePhone] = useState("");
     const [PassWord, setPassWord] = useState("");
-
-
-
     return (
         <View style={styles.con}>
 
