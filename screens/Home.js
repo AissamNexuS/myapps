@@ -1,7 +1,6 @@
 import { Text, View, StyleSheet, SafeAreaView, FlatList, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import items from '../img/pngs/postes'
-import { transform } from '@babel/core';
 
 
 const Home = ({ navigation }) => {
@@ -61,7 +60,7 @@ const Home = ({ navigation }) => {
                     keyExtractor={item => item.id}
                 />
                 <View style={Style001.logop5}>
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={() => { navigation.navigate("AddPost") }}>
                         <Image source={require("../img/pngs/post.png")} style={Style001.logop6} />
                     </TouchableOpacity>
                 </View>
