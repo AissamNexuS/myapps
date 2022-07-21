@@ -16,7 +16,7 @@ export default function Detais({ navigation }) {
                 <View style={contaire0.V3}>
                     <Text style={contaire0.Tel2}>Nouvelle proposition graphique</Text>
                 </View>
-                <View style={{ top: 10 }}>
+                <View style={{ top: -10 }}>
                     <Text style={contaire0.Tel5}>Date :                                                   Time :</Text>
                     <View style={contaire0.V4}>
                         <Text style={contaire0.Tel2}>2021-08-3     </Text>
@@ -73,62 +73,21 @@ const contaire0 = StyleSheet.create({
         fontWeight: 'bold',
         left: 10,
     },
-    logop1: {
-        width: 34,
-        height: 34,
-        left: 90,
-    },
-    logop2: {
-        width: 34,
-        height: 34,
-        left: 130,
-    },
-    logop3: {
-        width: 49.92,
-        height: 40,
-        top: 12,
-        left: -160,
-    },
-    logop4: {
-        width: 34,
-        height: 34,
-        top: 12,
-        left: 160,
-    },
-    Tel: {
-        color: '#373737',
-        fontSize: 20,
-        fontWeight: '600',
-        left: 60,
-        height: 60,
-    },
+
     Tel2: {
         color: '#373737',
         fontWeight: '600',
         fontSize: 20,
         left: 10,
     },
-    Tel3: {
-        color: '#AAAAAA',
-        fontSize: 14,
-        left: 10,
-    },
-    Tel4: {
-        color: '#373737',
-        fontSize: 14,
-        left: 10
-    },
+
+
     Tel5: {
         fontWeight: '300',
         fontSize: 18,
         color: '#373737',
     },
-    logop5: {
-        // alignItems: 'flex-end',
-        alignSelf: 'flex-end',
-        backgroundColor: 'red',
-        width: 100,
-    },
+
     Btn: {
         backgroundColor: '#CA135E',
         color: "#FFF",

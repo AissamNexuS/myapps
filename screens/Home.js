@@ -1,18 +1,19 @@
 import { Text, View, StyleSheet, SafeAreaView, FlatList, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import items from '../img/pngs/postes'
+import { transform } from '@babel/core';
 
 
 const Home = ({ navigation }) => {
     const Item = () => (
         <View>
-            <Text style={contaire0.Tel}> Coca-Cola
+            <Text style={Style001.Tel}> Coca-Cola
                 <View >
-                    <Image source={require("../img/pngs/3.png")} style={contaire0.logop3} />
+                    <Image source={require("../img/pngs/3.png")} style={Style001.logop3} />
                 </View>
                 <View >
                     <TouchableOpacity >
-                        <Image source={require("../img/pngs/coeur.png")} style={contaire0.logop4} />
+                        <Image source={require("../img/pngs/coeur.png")} style={Style001.logop4} />
                     </TouchableOpacity>
                 </View>
             </Text>
@@ -22,9 +23,9 @@ const Home = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={contaire0.Tel2}>Nouvelle proposition graphique</Text>
-                <Text style={contaire0.Tel3}>2021-08-31 — 09:39</Text>
-                <Text style={contaire0.Tel4}>Rabat, Agdal, Av Oqba ...</Text>
+                <Text style={Style001.Tel2}>Nouvelle proposition graphique</Text>
+                <Text style={Style001.Tel3}>2021-08-31 — 09:39</Text>
+                <Text style={Style001.Tel4}>Rabat, Agdal, Av Oqba ...</Text>
             </View>
         </View>
     );
@@ -39,29 +40,29 @@ const Home = ({ navigation }) => {
 
     );
     return (
-        <View style={contaire0.V}>
+        <View style={Style001.V}>
 
-            <Text style={contaire0.txt}>  Fil D'actualité
+            <Text style={Style001.txt}>  Fil D'actualité
                 <View >
                     <TouchableOpacity >
-                        <Image source={require("../img/pngs/2.png")} style={contaire0.logop1} />
+                        <Image source={require("../img/pngs/2.png")} style={Style001.logop1} />
                     </TouchableOpacity>
                 </View>
                 <View >
                     <TouchableOpacity onPress={() => { navigation.navigate("Signin") }}>
-                        <Image source={require("../img/pngs/1.png")} style={contaire0.logop2} />
+                        <Image source={require("../img/pngs/1.png")} style={Style001.logop2} />
                     </TouchableOpacity>
                 </View>
             </Text>
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={Style001.container}>
                 <FlatList
                     data={items}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
-                <View style={contaire0.logop5}>
+                <View style={Style001.logop5}>
                     <TouchableOpacity >
-                        <Image source={require("../img/pngs/coeur2.png")} />
+                        <Image source={require("../img/pngs/post.png")} style={Style001.logop6} />
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>
@@ -69,7 +70,7 @@ const Home = ({ navigation }) => {
     )
 }
 
-const contaire0 = StyleSheet.create({
+const Style001 = StyleSheet.create({
     V: {
         flex: 1,
         padding: 10,
@@ -128,19 +129,17 @@ const contaire0 = StyleSheet.create({
         left: 10
     },
     logop5: {
-        // alignItems: 'flex-end',
-        alignSelf: 'flex-end',
-        // backgroundColor: 'red',
-        width: 100,
+        alignItems: 'flex-end',
+        // alignSelf: 'flex-end',
     },
-});
-const styles = StyleSheet.create({
+    logop6: {
+        width: 84,
+        height: 84,
+    },
     container: {
         flex: 1,
-
     },
 });
-
 
 
 export default Home;
