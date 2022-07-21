@@ -3,17 +3,17 @@ import React from 'react'
 import items from '../img/pngs/postes'
 
 
-
-
 const Home = ({ navigation }) => {
     const Item = () => (
         <View>
             <Text style={contaire0.Tel}> Coca-Cola
                 <View >
                     <Image source={require("../img/pngs/3.png")} style={contaire0.logop3} />
-                </View><View ><TouchableOpacity >
-                    <Image source={require("../img/pngs/coeur.png")} style={contaire0.logop4} />
-                </TouchableOpacity >
+                </View>
+                <View >
+                    <TouchableOpacity >
+                        <Image source={require("../img/pngs/coeur.png")} style={contaire0.logop4} />
+                    </TouchableOpacity>
                 </View>
             </Text>
             <View>
@@ -62,7 +62,7 @@ const Home = ({ navigation }) => {
                 <View style={contaire0.logop5}>
                     <TouchableOpacity >
                         <Image source={require("../img/pngs/coeur2.png")} />
-                    </TouchableOpacity >
+                    </TouchableOpacity>
                 </View>
             </SafeAreaView>
         </View>
