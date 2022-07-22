@@ -1,9 +1,11 @@
+import React, { useState } from 'react'
 import { Text, View, StyleSheet, SafeAreaView, FlatList, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
 import items from '../img/pngs/postes'
+import ModalConf2 from '../component/modalglobal2';
 
 
 const Home = ({ navigation }) => {
+    const [Show2, setShow2] = useState(false);
     const Item = () => (
         <View>
             <Text style={Style001.Tel}> Coca-Cola
@@ -48,9 +50,11 @@ const Home = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <View >
-                    <TouchableOpacity onPress={() => { navigation.navigate("Signin") }}>
+                    <TouchableOpacity onPress={() => { setShow2(true) }}>
                         <Image source={require("../img/pngs/1.png")} style={Style001.logop2} />
                     </TouchableOpacity>
+                    <ModalConf2 modalVisible={Show2} Onclose={() => { setShow2(false); }} OnConf={() => { setShow2(true); }} confirm={() => { navigation.navigate("Signin"); }} />
+
                 </View>
             </Text>
             <SafeAreaView style={Style001.container}>

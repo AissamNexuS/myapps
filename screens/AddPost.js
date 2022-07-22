@@ -87,7 +87,8 @@ export default function Detais({ navigation }) {
                     <View style={StylesDetails.V43}>
                         <TextInput style={StylesDetails.Tel2}>Rabat, Agdal, Av Oqba ...</TextInput>
                     </View>
-                </View ><View style={{ top: -20 }}>
+                </View>
+                <View style={{ top: -20 }}>
                     <Text style={StylesDetails.Tel6}> Can be liked</Text>
                     <View style={StylesDetails.V8}></View>
                     <View style={StylesDetails.V9}></View>
@@ -96,7 +97,7 @@ export default function Detais({ navigation }) {
             <TouchableOpacity onPress={() => { setShow2(true) }}>
                 <Text style={StylesDetails.Btn}>Suivant </Text>
             </TouchableOpacity>
-            <ModalConf modalVisible={Show2} Onclose={() => { setShow2(false); }} OnConf={() => { setShow2(true); }} onPress={() => { navigation.navigate("Home"); }} />
+            <ModalConf modalVisible={Show2} Onclose={() => { setShow2(false); }} OnConf={() => { setShow2(true); }} confirm={() => { navigation.navigate("Home"); }} />
 
         </View>
 

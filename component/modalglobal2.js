@@ -3,7 +3,7 @@
 import React from "react";
 import { Alert, Modal, Text, TouchableOpacity, View } from "react-native";
 import { ScaledSheet } from "react-native-size-matters"
-const ModalConf = ({ modalVisible, Onclose, confirm }) => {
+const ModalConf2 = ({ modalVisible, Onclose, confirm }) => {
 
     return (
         <View style={styles.centeredView}>
@@ -18,9 +18,9 @@ const ModalConf = ({ modalVisible, Onclose, confirm }) => {
             >
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
-                        <Text style={styles.txt}>Purge Data</Text>
+                        <Text style={styles.txt}>Sortir</Text>
                         <Text style={styles.txt}></Text>
-                        <Text style={styles.Tel6}>Text: "Êtes-vous sûr de vouloir supprimer toutes les donnés ? </Text>
+                        <Text style={styles.Tel6}>Text: "Êtes-vous sûr de vouloir vous déconnecter ?" </Text>
                         <Text style={styles.txt}></Text>
                         <View style={styles.Voi}>
                             <TouchableOpacity style={[styles.button2,]} onPress={() => Onclose(false)}>
@@ -115,7 +115,7 @@ const styles = ScaledSheet.create({
     }
 });
 
-export default ModalConf;
+export default ModalConf2;
 
 
 
