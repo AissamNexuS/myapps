@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, Platform, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { Text, View, Platform, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { ScaledSheet } from "react-native-size-matters";
 import ModalConf from '../component/modalglobal';
@@ -34,8 +34,7 @@ export default function Detais({ navigation }) {
 
 
     return (
-
-        <View style={StylesDetails.V}>
+        <ScrollView><View style={StylesDetails.V}>
             <View style={StylesDetails.V2}>
                 <Text style={StylesDetails.txt}>  Nouveau post </Text>
             </View>
@@ -46,7 +45,7 @@ export default function Detais({ navigation }) {
             <View style={{ right: -13 }}>
                 <TouchableOpacity><Text style={StylesDetails.Tel3}> Modifier
                     <View>
-                        <TouchableOpacity >
+                        <TouchableOpacity>
                             <Image source={require("../img/pngs/Modifie.png")} style={StylesDetails.logop1} />
                         </TouchableOpacity>
                     </View>
@@ -58,11 +57,11 @@ export default function Detais({ navigation }) {
                 <View style={StylesDetails.V3}>
                     <TextInput style={StylesDetails.Tel2}>Nouvelle proposition graphique</TextInput>
                 </View>
-                <View >
+                <View>
                     <Text style={StylesDetails.Tel5}>  Date :                                       Time :</Text>
                     <View style={StylesDetails.V4}>
 
-                        <TouchableOpacity style={StylesDetails.Tel32} onPress={() => showMode('date')} >
+                        <TouchableOpacity style={StylesDetails.Tel32} onPress={() => showMode('date')}>
                             <Text style={StylesDetails.Tel09}>{text}</Text>
                         </TouchableOpacity>
                     </View>
@@ -73,11 +72,10 @@ export default function Detais({ navigation }) {
                             mode={mode}
                             is24Hour={true}
                             display='default'
-                            onChange={onChange}
-                        />
+                            onChange={onChange} />
                     )}
                     <View style={StylesDetails.V5}>
-                        <TouchableOpacity style={StylesDetails.Tel33} onPress={() => showMode('time')} >
+                        <TouchableOpacity style={StylesDetails.Tel33} onPress={() => showMode('time')}>
                             <Text style={StylesDetails.Tel08}>{Tm}</Text>
                         </TouchableOpacity>
                     </View>
@@ -94,12 +92,12 @@ export default function Detais({ navigation }) {
                     <View style={StylesDetails.V9}></View>
                 </View>
             </View>
-            <TouchableOpacity onPress={() => { setShow2(true) }}>
+            <TouchableOpacity onPress={() => { setShow2(true); }}>
                 <Text style={StylesDetails.Btn}>Suivant </Text>
             </TouchableOpacity>
             <ModalConf modalVisible={Show2} Onclose={() => { setShow2(false); }} OnConf={() => { setShow2(true); }} confirm={() => { navigation.navigate("Home"); }} />
 
-        </View>
+        </View></ScrollView>
 
     )
 }
