@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TextInput, View, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { Text, TextInput, View, TouchableOpacity, ScrollView, Image } from 'react-native';
 import Api from './../source/api'
 import { ScaledSheet } from "react-native-size-matters";
 
