@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Userinput from "../component/auth/Userinput";
+import { ScaledSheet } from "react-native-size-matters";
 
 
 
@@ -69,10 +70,10 @@ const Signup = ({ navigation }) => {
 }
 
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     con: {
         flex: 1,
-        padding: 10,
+        padding: '10@s',
         backgroundColor: "#E1FAF6"
 
     },
@@ -84,20 +85,19 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         borderRadius: 8,
-        padding: 15,
-        marginVertical: 10,
+        padding: '15@s',
+        marginVertical: '10@vs',
+
     },
-    marg: {
-        marginVertical: 10,
-    },
+
     contaire: {
-        color: "#268C63",
-        fontSize: 30,
+        color: "#539D48",
+        fontSize: 34,
         fontWeight: "bold"
     },
 
 })
-const styleES = StyleSheet.create({
+const styleES = ScaledSheet.create({
     texte: {
         color: '#229764',
         fontSize: 18,
@@ -112,10 +112,10 @@ const styleES = StyleSheet.create({
         color: "#7d7d7d",
         alignItems: "stretch",
         fontSize: 18,
-        marginVertical: 10,
+        marginVertical: '10@s',
     },
     ScrollV: {
-        marginHorizontal: 20,
+        marginHorizontal: '20@s',
     },
 })
 export default Signup;

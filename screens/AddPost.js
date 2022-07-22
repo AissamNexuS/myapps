@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, Platform, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { ScaledSheet } from "react-native-size-matters";
 
 
 export default function Detais({ navigation }) {
@@ -11,6 +12,8 @@ export default function Detais({ navigation }) {
     const [show, setShow] = useState(false);
     const [text, setText] = useState('Date');
     const [Tm, setTm] = useState('Time');
+
+
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
         setShow(Platform.OS === 'ios');
@@ -31,103 +34,132 @@ export default function Detais({ navigation }) {
 
 
     return (
-        <View style={StylesDetails.V}>
-            <View style={StylesDetails.V2}>
-                <Text style={StylesDetails.txt}>  Nouveau post </Text>
-            </View>
-            <Text style={StylesDetails.Tel2}>Bannière</Text>
-            <View>
-                <Image source={require("../img/pngs/4.png")} style={{ width: 427.5, height: 285 }} />
-            </View>
-            <View>
-                <Text style={StylesDetails.Tel5}>Titre :</Text>
-                <View style={StylesDetails.V3}>
-                    <TextInput style={StylesDetails.Tel2}>Nouvelle proposition graphique</TextInput>
+        <ScrollView>
+            <View style={StylesDetails.V}>
+                <View style={StylesDetails.V2}>
+                    <Text style={StylesDetails.txt}>  Nouveau post </Text>
                 </View>
-                <View style={{ top: 10 }}>
-                    <Text style={StylesDetails.Tel5}>  Date :                                                   Time :</Text>
-                    <View style={StylesDetails.V4}>
-                        <TouchableOpacity style={StylesDetails.Tel2} onPress={() => showMode('date')} >
-                            <Text style={StylesDetails.Tel09}>{text}</Text>
-                        </TouchableOpacity>
-                    </View>
-                    {show && (
-                        <DateTimePicker
-                            testID='dateTimePicker'
-                            value={date}
-                            mode={mode}
-                            is24Hour={true}
-                            display='default'
-                            onChange={onChange}
-                        />
-                    )}
-                    <View style={StylesDetails.V5}>
-                        <TouchableOpacity onPress={() => showMode('time')} >
-                            <Text style={StylesDetails.Tel08}>{Tm}</Text>
-                        </TouchableOpacity>
-                    </View>
+                <Text style={StylesDetails.Tel2}>Bannière</Text>
+                <View style>
+                    <Image source={require("../img/pngs/4.png")} style={{ width: 397.5, height: 225 }} />
                 </View>
-                <View style={{ top: -50 }}>
-                    <Text style={StylesDetails.Tel5}>Localisation :</Text>
+                <View style={{ right: -13 }}>
+                    <TouchableOpacity><Text style={StylesDetails.Tel3}> Modifier
+                        <View>
+                            <TouchableOpacity >
+                                <Image source={require("../img/pngs/Modifie.png")} style={StylesDetails.logop1} />
+                            </TouchableOpacity>
+                        </View>
+                    </Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ top: -10 }}>
+                    <Text style={StylesDetails.Tel5}>Titre :</Text>
                     <View style={StylesDetails.V3}>
-                        <TextInput style={StylesDetails.Tel2}>Rabat, Agdal, Av Oqba ...</TextInput>
+                        <TextInput style={StylesDetails.Tel2}>Nouvelle proposition graphique</TextInput>
+                    </View>
+                    <View >
+                        <Text style={StylesDetails.Tel5}>  Date :                                       Time :</Text>
+                        <View style={StylesDetails.V4}>
+                            <TouchableOpacity style={StylesDetails.Tel32} onPress={() => showMode('date')} >
+                                <Text style={StylesDetails.Tel09}>{text}</Text>
+                            </TouchableOpacity>
+                        </View>
+                        {show && (
+                            <DateTimePicker
+                                testID='dateTimePicker'
+                                value={date}
+                                mode={mode}
+                                is24Hour={true}
+                                display='default'
+                                onChange={onChange}
+                            />
+                        )}
+                        <View style={StylesDetails.V5}>
+                            <TouchableOpacity style={StylesDetails.Tel33} onPress={() => showMode('time')} >
+                                <Text style={StylesDetails.Tel08}>{Tm}</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={{ top: -70 }}>
+                        <Text style={StylesDetails.Tel5}>Localisation :</Text>
+                        <View style={StylesDetails.V43}>
+                            <TextInput style={StylesDetails.Tel2}>Rabat, Agdal, Av Oqba ...</TextInput>
+                        </View>
+                    </View ><View style={{ top: -20 }}>
+                        <Text style={StylesDetails.Tel6}> Can be liked</Text>
+                        <View style={StylesDetails.V8}></View>
+                        <View style={StylesDetails.V9}></View>
                     </View>
                 </View>
-                <Text style={StylesDetails.Tel6}> Can be liked</Text>
-                <View style={StylesDetails.V8}></View>
-                <View style={StylesDetails.V9}></View>
+                <TouchableOpacity onPress={() => { navigation.navigate("Home") }}>
+                    <Text style={StylesDetails.Btn}>Suivant </Text>
+                </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={() => { navigation.navigate("Home") }}>
-                <Text style={StylesDetails.Btn}>Suivant </Text>
-            </TouchableOpacity>
-        </View>
+        </ScrollView>
 
     )
 }
 
-const StylesDetails = StyleSheet.create({
+const StylesDetails = ScaledSheet.create({
     V: {
         flex: 1,
-        padding: 10,
+        padding: '20@s',
         backgroundColor: '#FFFFFFFF',
     },
+    LogoML: {
+        height: '225@s',
+        width: '337.5@s',
+    },
     V2: {
-        marginVertical: 20,
+        marginVertical: 0,
     },
     V3: {
         backgroundColor: '#ECECEC',
         borderRadius: 8,
-        padding: 10
+        padding: '10@s'
+    },
+    V43: {
+        backgroundColor: '#ECECEC',
+        borderRadius: 8,
+        padding: '10@s',
+        borderColor: '#373737',
+    },
+    logop1: {
+        width: '20@s',
+        height: '20@s',
+        left: '-83@s',
+
     },
     V4: {
         backgroundColor: '#ECECEC',
         borderRadius: 8,
-        padding: 20,
+        padding: '20@s',
         alignSelf: 'flex-start',
     },
     V8: {
         backgroundColor: '#d74483',
         borderRadius: 9.5,
-        padding: 10,
-        width: 72,
-        height: 19,
-        top: -30,
+        padding: '0@s',
+        width: '59@s',
+        height: '14@s',
+        top: -40,
     },
     V9: {
         backgroundColor: '#CA135E',
         borderRadius: 30,
-        padding: 10,
-        width: 28,
-        height: 28,
-        top: -54,
-        left: 46,
+        padding: '10@s',
+        width: '22@s',
+        height: '22@s',
+        top: '-49@s',
+        left: '37@s',
     },
     V5: {
         backgroundColor: '#ECECEC',
         borderRadius: 8,
-        padding: 20,
+        padding: '20@s',
         alignSelf: 'flex-end',
-        top: -69,
+        top: '-69@mvs',
     },
     txt: {
         fontSize: 30,
@@ -135,31 +167,41 @@ const StylesDetails = StyleSheet.create({
         fontWeight: 'bold',
         left: 10,
     },
-
+    Tel33: {
+        color: '#373737',
+        fontWeight: '600',
+        fontSize: 20,
+        left: 22,
+    },
+    Tel32: {
+        color: '#373737',
+        fontWeight: '600',
+        fontSize: 20,
+        left: -20,
+    },
     Tel2: {
         color: '#373737',
         fontWeight: '600',
         fontSize: 20,
         left: 10,
     },
+
     Tel09: {
         color: '#373737',
         fontWeight: '600',
         fontSize: 20,
-        left: 10,
-        width: 150,
+        left: 30,
+        width: '100@s',
         alignItems: 'center',
     },
     Tel08: {
         color: '#373737',
         fontWeight: '600',
         fontSize: 20,
-        left: 10,
-        width: 80,
+        left: '0@s',
+        width: '80@s',
         alignItems: 'center',
     },
-
-
     Tel5: {
         fontWeight: '500',
         fontSize: 18,
@@ -180,8 +222,15 @@ const StylesDetails = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         borderRadius: 8,
-        padding: 15,
+        padding: '15@s',
         marginVertical: 10,
         top: -60,
+    },
+    Tel3: {
+        color: '#AAAAAA',
+        fontSize: 18,
+        alignSelf: 'flex-end',
+        marginVertical: 10,
+
     },
 });

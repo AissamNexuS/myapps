@@ -128,8 +128,10 @@ const Style001 = StyleSheet.create({
         left: 10
     },
     logop5: {
-        alignItems: 'flex-end',
-        // alignSelf: 'flex-end',
+        position: 'absolute',
+        bottom: 5,
+        right: 10,
+
     },
     logop6: {
         width: 84,

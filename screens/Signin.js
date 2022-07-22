@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, TextInput, View, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
 import Api from './../source/api'
+import { ScaledSheet } from "react-native-size-matters";
 
 
 
@@ -94,10 +95,10 @@ const Signin = ({ navigation }) => {
 }
 
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     con: {
         flex: 1,
-        padding: 10,
+        padding: '10@s',
         backgroundColor: "#E1FAF6"
 
     },
@@ -109,12 +110,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         borderRadius: 8,
-        padding: 15,
-        marginVertical: 10,
+        padding: '15@s',
+        marginVertical: '10@vs',
 
     },
     marg: {
-        marginVertical: 10,
+        marginVertical: '10@vs',
     },
     contaire: {
         color: "#539D48",
@@ -126,9 +127,9 @@ const styles = StyleSheet.create({
         color: '#373737',
         backgroundColor: '#fffff0',
         shadowColor: '#999999',
-        padding: 17,
-        paddingHorizontal: 5,
-        marginVertical: 1,
+        padding: '17@s',
+        paddingHorizontal: '5@ms',
+        marginVertical: '1@s',
         borderRadius: 8,
 
     },
@@ -136,11 +137,11 @@ const styles = StyleSheet.create({
         color: "#373737",
         fontSize: 18,
         fontWeight: "bold",
-        marginVertical: 10,
+        marginVertical: '10@s',
 
     }
 })
-const styleES = StyleSheet.create({
+const styleES = ScaledSheet.create({
     texte: {
         color: '#229764',
         fontSize: 18,
@@ -155,10 +156,10 @@ const styleES = StyleSheet.create({
         color: "#7d7d7d",
         alignItems: "stretch",
         fontSize: 18,
-        marginVertical: 10,
+        marginVertical: '10@s',
     },
     ScrollV: {
-        marginHorizontal: 20,
+        marginHorizontal: '20@s',
     },
 })
 export default Signin;
